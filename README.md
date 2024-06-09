@@ -10,18 +10,13 @@ are using this distribution.
 
 <img src="https://img.shields.io/badge/Gradle-8.7-blue"  alt="Gradle-8.7"/>
 
-**Your todo**
-
-Search all places in the code of this repository, that are commented with
-`url of my custom repo` and replace that url with _your_ custom in-house repository url.
-Currently, Maven Central is used here as an example.
 
 ## This applies to projects that use the custom Gradle distribution
 
 Each project is restricted to these repositories
 
 - _My custom repository (your secured in-house maven repository)_
-- _MavenLocal_
+- _Maven local_
 
 Repositories that refer to other locations are automatically removed.
 
@@ -39,7 +34,7 @@ With this behavior I cannot accidentally by-pass the in-house repository._
 # └── build.gradle.kts
 
 dependencies {
-  implementation("org.apache.commons:commons-math:2.0") # Works out of the box, resolved by my custom repository or maven local.
+  implementation("org.apache.commons:commons-math:2.0") # Works out of the box, resolved by our in-house repository or maven local.
 }
 
 # No need for a repositories { .. } block.
@@ -55,7 +50,7 @@ Because it is already specified by this custom Gradle distribution._
 # └── build.gradle.kts
 
 plugins {
-  `maven-publish` # Activating the plugin. Now, I can publish to my custom repository or maven local.
+  `maven-publish` # Activating the plugin. Now, I can publish in our in-house maven repository or maven local.
 }
 
 # No need for a publishing.repositories { .. } block.
@@ -100,16 +95,23 @@ distributionUrl=https://<url of my custom repo>/org/example/distribution/gradle-
 ```
 
 
-# How to build and publish this distribution
+## Your in-house Maven repository
+
+Search all places in the code of this repository, that are commented with
+`url of my custom repo` and replace that url with _your_ in-house repository url.
+Currently, Maven Central is used here as an example.
+
+
+## How to build and publish this distribution
 
 Do the following to build, test and publish this distribution 
 and the associated repository restriction plugin in your in-house repository.
 These are the steps that you usually integrate into your CI/CD pipeline.
 Do not forget to define the `gradle.properties` file for your pipeline runner
-as described in the previous section.
+as described in one of the previous sections.
 
 
-## Building and Testing
+### Build and Test
 
 1. Test the repository restriction plugin.
 ```shell
@@ -133,7 +135,7 @@ as described in the previous section.
 ```
 
 
-## Publishing
+### Publish
 
 Publish the artifacts if all tests are successful.
 
@@ -148,21 +150,23 @@ Publish the artifacts if all tests are successful.
 ```
 
 
-# How to update the underlying gradle base version
+## How to update the underlying Gradle base version
 
 Only the `gradleBaseVersion` variable in 
 [distribution/build.gradle.kts](distribution/build.gradle.kts)
 has to be increased.
-Then simply build again using the steps from the last section.
+Then simply build again using the steps from the last section or
+from [integration-testing/README.md](integration-testing/README.md).
 
-# Versioning
+
+## Versioning
 
 As indicated in the filename, there are two interesting versions.
-The official Gradle version and our custom version.
-The combination of both versions is our custom Gradle distribution's version. 
+The official Gradle version of the underlying Gradle distribution and our custom version.
+The combination of both versions is our custom Gradle distribution's version.
 
 ```
-gradle-8.7-0.0.1.zip
+gradle-8.8-0.0.1.zip
         |    |
  official    our internal
    gradle    versioning
