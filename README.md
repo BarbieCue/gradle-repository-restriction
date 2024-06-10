@@ -8,7 +8,7 @@ Gradle distribution that enforces this restriction.
 You just need to make sure that your Gradle based projects 
 are using this distribution.
 
-<img src="https://img.shields.io/badge/Gradle-8.7-blue"  alt="Gradle-8.7"/>
+<img src="https://img.shields.io/badge/Gradle-8.8-blue"  alt="Gradle-8.8"/>
 
 
 ## This applies to projects that use the custom Gradle distribution
