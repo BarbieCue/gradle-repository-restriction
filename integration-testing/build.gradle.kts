@@ -35,12 +35,14 @@ gradlePlugin {
 
 dependencies {
     implementation("org.junit.jupiter:junit-jupiter-api:5.10.2")
-    testImplementation(gradleTestKit())
-    testImplementation("org.junit.jupiter:junit-jupiter-engine:5.10.2")
 }
 
-tasks.test {
-    useJUnitPlatform()
+testing {
+    suites {
+        val test by getting(JvmTestSuite::class) {
+            useJUnitJupiter()
+        }
+    }
 }
 
 fun RepositoryHandler.myCustomRepo(): MavenArtifactRepository =
