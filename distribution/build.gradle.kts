@@ -3,7 +3,7 @@ import java.net.URL
 group = "org.example.distribution"
 version = "0.0.1"
 
-val gradleBaseVersion = "8.8"
+val gradleBaseVersion = "8.9"
 val gradleBase = "gradle-$gradleBaseVersion"
 
 plugins {
@@ -56,7 +56,7 @@ fun URL.readBytesAndWriteThemToFileBuffered(destinationFile: File) =
 // 2. Take the unzipped contents of the downloaded gradle base distribution and add our custom init.d script
 distributions {
     main {
-        distributionBaseName.set("custom-distribution-$gradleBaseVersion")
+        distributionBaseName.set("custom-gradle-distribution-$gradleBaseVersion")
         contents {
             into("/${gradleBase}") {
                 from("$buildDirectory/$gradleBase")
