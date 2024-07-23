@@ -167,8 +167,8 @@ The combination of both versions is our custom Gradle distribution's version.
 
 ```
 custom-gradle-distribution-8.9-0.0.1.zip
-        |    |
- official    our internal
-   gradle    versioning
-  version
+                            |    |
+                     official    our internal
+                       gradle    versioning
+                      version
 ```
