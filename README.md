@@ -8,7 +8,7 @@ Gradle distribution that enforces this restriction.
 You just need to make sure that your Gradle based projects 
 are using this distribution.
 
-<img src="https://img.shields.io/badge/Gradle-8.9-blue"  alt="Gradle-8.9"/>
+<img src="https://img.shields.io/badge/Gradle-8.10-blue"  alt="Gradle-8.10"/>
 
 
 ## This applies to projects that use the custom Gradle distribution
@@ -91,7 +91,7 @@ Reference this custom distribution in your Gradle based projects
 # └── gradle
 #     └── wrapper
 #         └── gradle-wrapper.properties
-distributionUrl=https://<url of my custom repo>/org/example/distribution/custom-gradle-distribution-8.9/0.0.1/custom-gradle-distribution-8.9-0.0.1.zip
+distributionUrl=https://<url of my custom repo>/org/example/distribution/custom-gradle-distribution-8.10/0.0.1/custom-gradle-distribution-8.10-0.0.1.zip
 ```
 
 
