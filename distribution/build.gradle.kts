@@ -3,7 +3,7 @@ import java.net.URL
 group = "org.example.distribution"
 version = "0.0.1"
 
-val gradleBaseVersion = "8.9"
+val gradleBaseVersion = "8.10"
 val gradleBase = "gradle-$gradleBaseVersion"
 
 plugins {

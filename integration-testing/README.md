@@ -37,8 +37,8 @@ val buildResult = GradleRunner
     .withProjectDir(testProjectDir)
     .withArguments("...")
     .build()
-assertTrue(result.getOutput().contains("Hello world!"));
-assertEquals(SUCCESS, result.task(":helloWorld").getOutcome());
+assertTrue(result.getOutput().contains("Hello world!"))
+assertEquals(SUCCESS, result.task(":helloWorld").getOutcome())
 ```
 As you can see you can assert that the output contains some string.
 But this means that you only test that the string was written to the output.
@@ -96,7 +96,7 @@ pkill -f '.*GradleDaemon.*'
 _2. Remove old versions of the custom distribution_
 
 ```shell
-rm ~/.gradle/wrapper/dists/*custom-distribution* -rf
+rm ~/.gradle/wrapper/dists/*custom-gradle-distribution* -rf
 ```
 
 _3. Remove old build artifacts, if there are any_
